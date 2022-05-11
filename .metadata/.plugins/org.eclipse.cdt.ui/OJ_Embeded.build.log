@@ -1,0 +1,10 @@
+12:48:57 **** Incremental Build of configuration Debug for project OJ_Embeded ****
+make -j12 all 
+arm-none-eabi-size   OJ_Embeded.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4700	     20	   1572	   6292	   1894	OJ_Embeded.elf
+Finished building: default.size.stdout
+ 
+
+12:48:58 Build Finished. 0 errors, 0 warnings. (took 297ms)
+
