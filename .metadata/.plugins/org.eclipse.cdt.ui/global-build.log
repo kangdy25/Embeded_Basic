@@ -235,3 +235,88 @@ arm-none-eabi-size   OJ_Embeded.elf
    4700	     20	   1572	   6292	   1894	OJ_Embeded.elf
 Finished building: default.size.stdout
  
+12:29:48 **** Incremental Build of configuration Debug for project OJ_Embeded ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:89:33: warning: initialization of 'volatile unsigned int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+   89 |   volatile unsigned int * reg = 0x40021018;
+      |                                 ^~~~~~~~~~
+../Core/Src/main.c:103:34: warning: initialization of 'volatile unsigned int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  103 |   volatile unsigned int * reg2 = 0x40011010;
+      |                                  ^~~~~~~~~~
+At top level:
+../Core/Src/main.c:174:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  174 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "OJ_Embeded.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Programming\Embeded\Embeded_Basic\OJ_Embeded\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OJ_Embeded.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: OJ_Embeded.elf
+ 
+arm-none-eabi-size   OJ_Embeded.elf 
+arm-none-eabi-objdump -h -S  OJ_Embeded.elf  > "OJ_Embeded.list"
+   text	   data	    bss	    dec	    hex	filename
+   4488	     20	   1572	   6080	   17c0	OJ_Embeded.elf
+Finished building: default.size.stdout
+ 
+Finished building: OJ_Embeded.list
+ 
+12:44:42 **** Incremental Build of configuration Debug for project OJ_Embeded ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:89:33: warning: initialization of 'volatile unsigned int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+   89 |   volatile unsigned int * reg = 0x40021018;
+      |                                 ^~~~~~~~~~
+../Core/Src/main.c:103:34: warning: initialization of 'volatile unsigned int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  103 |   volatile unsigned int * reg2 = 0x40011010;
+      |                                  ^~~~~~~~~~
+At top level:
+../Core/Src/main.c:174:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  174 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "OJ_Embeded.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Programming\Embeded\Embeded_Basic\OJ_Embeded\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OJ_Embeded.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: OJ_Embeded.elf
+ 
+arm-none-eabi-size   OJ_Embeded.elf 
+arm-none-eabi-objdump -h -S  OJ_Embeded.elf  > "OJ_Embeded.list"
+   text	   data	    bss	    dec	    hex	filename
+   4488	     20	   1572	   6080	   17c0	OJ_Embeded.elf
+Finished building: default.size.stdout
+ 
+Finished building: OJ_Embeded.list
+ 
+12:45:38 **** Incremental Build of configuration Debug for project OJ_Embeded ****
+make -j12 all 
+arm-none-eabi-size   OJ_Embeded.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4488	     20	   1572	   6080	   17c0	OJ_Embeded.elf
+Finished building: default.size.stdout
+ 
+13:25:40 **** Incremental Build of configuration Debug for project OJ_Embeded ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:89:33: warning: initialization of 'volatile unsigned int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+   89 |   volatile unsigned int * reg = 0x40021018;
+      |                                 ^~~~~~~~~~
+../Core/Src/main.c:99:34: warning: initialization of 'volatile unsigned int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+   99 |   volatile unsigned int * reg2 = 0x40011004;
+      |                                  ^~~~~~~~~~
+../Core/Src/main.c:106:34: warning: initialization of 'volatile unsigned int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  106 |   volatile unsigned int * reg3 = 0x40011010;
+      |                                  ^~~~~~~~~~
+At top level:
+../Core/Src/main.c:177:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  177 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "OJ_Embeded.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Programming\Embeded\Embeded_Basic\OJ_Embeded\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OJ_Embeded.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: OJ_Embeded.elf
+ 
+arm-none-eabi-size   OJ_Embeded.elf 
+arm-none-eabi-objdump -h -S  OJ_Embeded.elf  > "OJ_Embeded.list"
+   text	   data	    bss	    dec	    hex	filename
+   3692	     20	   1572	   5284	   14a4	OJ_Embeded.elf
+Finished building: default.size.stdout
+ 
+Finished building: OJ_Embeded.list
+ 

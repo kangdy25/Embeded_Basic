@@ -83,30 +83,34 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
+  // MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
   volatile unsigned int * reg = 0x40021018;
   *reg |= 16;
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-  GPIO_InitStruct.Pin = GPIO_LED_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(GPIO_LED_GPIO_Port, &GPIO_InitStruct);
+
+//  GPIO_InitTypeDef GPIO_InitStruct = {0};
+//  GPIO_InitStruct.Pin = GPIO_LED_Pin;
+//  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+//  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+//  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+//  HAL_GPIO_Init(GPIO_LED_GPIO_Port, &GPIO_InitStruct);
+
+  volatile unsigned int * reg2 = 0x40011004;
+  *reg2 = (*reg2 & ~(15UL << 20U)) | (3U << 20U);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  volatile unsigned int * reg2 = 0x40011010;
+  volatile unsigned int * reg3 = 0x40011010;
   while (1)
   {
 
-	  *reg2 = 0x2000;
+	  *reg3 = 0x2000;
 
 	  HAL_Delay(100);
-	  *reg2 = (0x2000 << 16);
+	  *reg3 = (0x2000 << 16);
 	  HAL_Delay(100);
 
 
