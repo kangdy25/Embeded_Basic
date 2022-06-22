@@ -83,11 +83,11 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  // MX_GPIO_Init();
+  MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
-  volatile unsigned int * reg = 0x40021018;
-  *reg |= 16;
+  //volatile unsigned int * reg = 0x40021018;
+  // *reg |= 16;
 
 //  GPIO_InitTypeDef GPIO_InitStruct = {0};
 //  GPIO_InitStruct.Pin = GPIO_LED_Pin;
@@ -96,8 +96,8 @@ int main(void)
 //  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
 //  HAL_GPIO_Init(GPIO_LED_GPIO_Port, &GPIO_InitStruct);
 
-  volatile unsigned int * reg2 = 0x40011004;
-  *reg2 = (*reg2 & ~(15UL << 20U)) | (3U << 20U);
+  // volatile unsigned int * reg2 = 0x40011004;
+  // *reg2 = (*reg2 & ~(15UL << 20U)) | (3U << 20U);
 
   /* USER CODE END 2 */
 
@@ -107,17 +107,17 @@ int main(void)
   while (1)
   {
 
-	  *reg3 = 0x2000;
+//	  *reg3 = 0x2000;
+//
+//	  HAL_Delay(100);
+//	  *reg3 = (0x2000 << 16);
+//	  HAL_Delay(100);
 
-	  HAL_Delay(100);
-	  *reg3 = (0x2000 << 16);
-	  HAL_Delay(100);
 
-
-	  /* HAL_GPIO_WritePin(GPIO_LED_GPIO_Port, GPIO_LED_Pin, 0);
+	  HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, 1);
 	  HAL_Delay(100);
-	  HAL_GPIO_WritePin(GPIO_LED_GPIO_Port, GPIO_LED_Pin, 0);
-	  HAL_Delay(100); */
+	  HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, 0);
+	  HAL_Delay(100);
 
 //	  if(!HAL_GPIO_ReadPin(GPIO_SWITCH_GPIO_Port, GPIO_SWITCH_Pin)){
 //		  HAL_GPIO_WritePin(GPIO_LED_GPIO_Port, GPIO_LED_Pin, 0);
@@ -185,6 +185,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIO_LED_GPIO_Port, GPIO_LED_Pin, GPIO_PIN_SET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, GPIO_PIN_SET);
+
   /*Configure GPIO pin : GPIO_LED_Pin */
   GPIO_InitStruct.Pin = GPIO_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -197,6 +200,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIO_SWITCH_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : GPIO_TEST_Pin */
+  GPIO_InitStruct.Pin = GPIO_TEST_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(GPIO_TEST_GPIO_Port, &GPIO_InitStruct);
 
 }
 
