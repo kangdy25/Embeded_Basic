@@ -7,4 +7,4 @@ STM32Cube IDE를 이용한 임베디드 프로그래밍 기초
 ### [임베디드 이론 - 데이터시트](https://kangdy25.tistory.com/41)
 
 
-<img width: "50%" src = "https://user-images.githubusercontent.com/58673491/175436169-f02b69e1-cf5a-4901-b5ed-5870be892e08.jpeg"/>
+<img width: 50% src = "https://user-images.githubusercontent.com/58673491/175436169-f02b69e1-cf5a-4901-b5ed-5870be892e08.jpeg"/>
